@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: sofagym-moe
+Version: 0.1.0
+Summary: MOE soft robotics environments for SofaGym
+Home-page: UNKNOWN
+Author: SofaGym Contributors
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+
+# sofagym_moe
+
+Standalone package containing MOE-family soft robotics environments for reinforcement learning.
+
+## Environments
+
+- **MultiFingerMOE**: Multi-finger gripper with 3 soft fingers (6D action space)
+- **CrawlingMOE**: Single soft finger crawling robot (2D action space)  
+- **MOE**: Discrete action gripper manipulation
+- **MOEGripper**: Gripper with discrete actions
+
+## Features
+
+- **Self-contained**: All mesh files and assets included in package
+- **Incremental force control**: Actions represent force deltas for smooth control
+- **Gym-compatible**: Standard OpenAI Gym interface
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+Requires: `sofagym` (base framework), SOFA v23+, SofaPython3, SoftRobots plugin
+
+## Quick Start
+
+```python
+from sofagym_moe.envs.MultiFingerMOE.MultiFingerMOEEnv import MultiFingerMOEEnv
+import numpy as np
+
+env = MultiFingerMOEEnv(config={"render": 0})
+state = env.reset()
+
+for _ in range(100):
+    action = np.random.uniform(-0.5, 0.5, size=6)
+    obs, reward, done, info = env.step(action)
+    if done:
+        break
+```
+
+## Examples
+
+Run included examples:
+```bash
+python sofagym_moe/examples/run_random_multifinger.py --visualize --steps 50
+python sofagym_moe/examples/run_random_crawling.py --visualize --steps 50
+```
+
+See `INCREMENTAL_ACTIONS.md` for details on the action space.
+
+
