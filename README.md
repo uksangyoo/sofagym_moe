@@ -2,19 +2,17 @@
 
 Standalone package containing MOE-family soft robotics environments for reinforcement learning.
 
+
 ## Environments
+
+> **Primary (recommended): MultiFingerMOE**
+> 
+> Actively supported — a multi-finger gripper with 3 soft fingers (6D action space).
 
 - **MultiFingerMOE**: Multi-finger gripper with 3 soft fingers (6D action space)
 - **CrawlingMOE**: Single soft finger crawling robot (2D action space)
 - **MOE**: Discrete action gripper manipulation
 - **MOEGripper**: Gripper with discrete actions
-
-## Features
-
-- **Self-contained**: All mesh files and assets included in package
-- **Incremental force control**: Actions represent force deltas for smooth control
-- **Gym-compatible**: Standard OpenAI Gym interface
-- **Portable**: Can be copied anywhere and works independently
 
 ## Prerequisites
 
