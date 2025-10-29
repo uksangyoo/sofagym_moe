@@ -1,6 +1,5 @@
 # sofagym_moe
-
-Standalone package containing MOE-family soft robotics environments for reinforcement learning.
+ MOE-family (https://proceedings.mlr.press/v305/yoo25a.html) soft robotics environments for reinforcement learning.
 
 
 ## Environments
